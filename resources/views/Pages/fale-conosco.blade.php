@@ -13,11 +13,12 @@
                 Ou se você preferir pode nos deixar um comentario : )
             </p>
 
-            <form action="#" method="post">
+            <form action="{{route('comentario')}}" method="post">
+                @csrf
                 <div class="message">
                     <label for="message">Menssagem</label>
                     <textarea name="message" id="message" rows="5" cols="70" placeholder="Digite sua mensagem aqui ......"></textarea>
-                    </textarea>
+                    
                 </div>
 
                 <div class="button-comentar">

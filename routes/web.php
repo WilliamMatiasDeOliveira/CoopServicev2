@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->name('home');
@@ -15,7 +16,7 @@ Route::view('/recrutamento', 'Pages.recrutamento')->name('recrutamento');
 Route::view('/terceirizacao', 'Pages.terceirizacao')->name('terceirizacao');
 Route::view('/vigilante', 'Pages.vigilante')->name('vigilante');
 
-
+Route::post('/comentario', [MainController::class, 'comentario'])->name('comentario');
 
 
 
