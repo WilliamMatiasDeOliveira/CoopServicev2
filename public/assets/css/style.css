@@ -737,7 +737,7 @@ body {
     letter-spacing: 0.1rem;
 }
 
-.colaborator-btn a{
+.colaborator-btn a {
     color: white;
     padding: 0.8rem 4rem;
     background-color: #ff7300;
@@ -756,86 +756,150 @@ body {
 /* pagina de especificções de profissôes */
 /* terceirização.html, recrutamento.html, limpeza.html, jardinagem.html, etc .... */
 .profissao-container {
-            width: 100%;
-            height: 100%;
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            /* background-color: red; */
-        }
+    width: 100%;
+    height: 100%;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* background-color: red; */
+}
 
-        .profissao-container a {
-            color: white;
-            padding: 0.8rem 4rem;
-            background-color: #ff7300;
-            font-family: "Orbitron";
-            border-radius: 0.5rem;
-            font-size: 1.2rem;
-            letter-spacing: 0.2rem;
-            font-weight: 600;
-            width: 20%;
-            margin-top: 3rem;
-            text-align: center;
-        }
+.profissao-container a {
+    color: white;
+    padding: 0.8rem 4rem;
+    background-color: #ff7300;
+    font-family: "Orbitron";
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    width: 20%;
+    margin-top: 3rem;
+    text-align: center;
+}
 
-        .profissao-container a:hover {
-            color: black;
-            font-weight: bold;
-        }
+.profissao-container a:hover {
+    color: black;
+    font-weight: bold;
+}
 
 
 
-        .profissao-image {
-            width: 30rem;
-            height: auto;
-        }
+.profissao-image {
+    width: 30rem;
+    height: auto;
+}
 
-        .profissao-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 1rem;
-        }
+.profissao-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
 
-        .profissao-text {
-            width: 60%;
-            display: flex;
-            flex-direction: column;
+.profissao-text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
 
-            /* background-color: yellow; */
-        }
+    /* background-color: yellow; */
+}
 
-        .profissao-text h1 {
-            font-size: 3rem;
-            font-family: "Orbitron", sans-serif;
-            color: #ff7300;
-        }
+.profissao-text h1 {
+    font-size: 3rem;
+    font-family: "Orbitron", sans-serif;
+    color: #ff7300;
+}
 
-        .profissao-text p {
-            color: white;
-            font-size: 1.8rem;
-            text-align: justify;
-        }
+.profissao-text p {
+    color: white;
+    font-size: 1.8rem;
+    text-align: justify;
+}
 
-        .sobre{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            padding: 0 5%;
-            
-            /* background-color: red; */
-        }
+.sobre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 5%;
 
-        .sobre p{
-            color: white;
-            font-size: 2rem;
-        }
+    /* background-color: red; */
+}
 
-        .sobre span{
-            color: #ff7300;
-            font-size: 2rem;
-            font-weight: bold;
-        }
+.sobre p {
+    color: white;
+    font-size: 2rem;
+}
+
+.sobre span {
+    color: #ff7300;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* pagina fale-conosco.html */
+.fale-conosco-container {
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+}
+
+.fale-conosco p {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.5rem;
+    color: #ff7300;
+}
+
+.fale-conosco .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    /* background-color: yellow; */
+}
+
+.fale-conosco .message label {
+    font-size: 4rem;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 3px #565e64;
+    margin-bottom: 2rem;
+}
+
+.fale-conosco .message textarea {
+    border-radius: 1rem;
+    border: none;
+    padding: 2rem;
+    font-size: 2rem;
+    outline: none;
+}
+
+.fale-conosco .message textarea::placeholder {
+    font-size: 2rem;
+}
+
+.fale-conosco .button-comentar {
+    display: flex;
+    justify-content: center;
+}
+
+.fale-conosco .btn-comentar {
+    color: white;
+    font-size: 1.5rem;
+    font-family: "Orbitron", sans-serif;
+    border: none;
+    padding: 1rem 35rem;
+    border-radius: 1rem;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    background-color: #ff7300;
+}
+
+.fale-conosco .btn-comentar:hover {
+    color: black;
+}
