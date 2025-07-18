@@ -3,6 +3,15 @@
 
 @section('content')
 
+{{-- Se o usuario estiver logado e mandar uma menssagem
+ele recebera uma menssagem de sucesso --}}
+@if (session('messageSuccess'))
+<div class="alert alert-success text-center"style="font-size:1.2rem;">
+    {{session('messageSuccess')}}
+</div>
+
+@endif
+
     <div class="fale-conosco-container">
 
         <section class="fale-conosco">
@@ -18,7 +27,11 @@
                 <div class="message">
                     <label for="message">Menssagem</label>
                     <textarea name="message" id="message" rows="5" cols="70" placeholder="Digite sua mensagem aqui ......"></textarea>
-                    
+                    @error('message')
+                        <div class="text-warning text-center"style="font-size:1.2rem">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="button-comentar">

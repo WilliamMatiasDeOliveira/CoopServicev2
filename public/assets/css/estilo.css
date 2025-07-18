@@ -1,0 +1,1037 @@
+:root {
+    --black: #0f0f1e;
+    --laranja: #ff7300;
+    --laranja-rgb: rgb(255, 115, 0.5);
+    --cinza: #565e64;
+    --cinza-rgb: rgba(86, 94, 100, 0.5);
+}
+
+* {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* impede rolagem lateral */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100vw;
+    padding: 0.5% 5%;
+    background-color: var(--black);
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+}
+
+.header .logo span {
+    font-size: 3rem;
+    font-family: "Orbitron", sans-serif;
+    color: var(--laranja-rgb);
+    font-weight: bold;
+    text-shadow: 0 0 1rem var(--laranja-rgb);
+    animation: pisca 1s ease infinite;
+}
+
+@keyframes pisca {
+    from {
+        text-shadow: 0 0 1rem var(--laranja-rgb);
+    }
+
+    to {
+        text-shadow: 1 1 1.5rem var(--laranja-rgb);
+    }
+}
+
+.header #btnMenu .hamburguer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 3rem;
+    height: 2.5rem;
+    padding: 0;
+    display: none;
+}
+
+.header #btnMenu .hamburguer span {
+    width: 100%;
+    height: 100%;
+    background-color: var(--laranja);
+    border-radius: 5rem;
+}
+
+.header .collapse {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 50vw;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.header #menu a {
+    color: var(--cinza);
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding: 0.5rem 0;
+    text-decoration: none;
+}
+
+.header #menu a:hover {
+    color: white;
+}
+
+.header #menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0.3rem;
+    background-color: var(--laranja);
+    transition: 0.5s ease;
+    border-radius: 2rem;
+}
+
+.header #menu a:hover::after {
+    width: 100%;
+}
+
+.header .login {
+    color: white;
+    padding: 0.5rem 3rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    border-radius: 1rem;
+    background-color: var(--laranja);
+    text-decoration: none;
+}
+
+.header .login:hover {
+    color: var(--black);
+}
+
+.header .logout {
+    color: white;
+    padding: 0.5rem 3rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    border-radius: 1rem;
+    background-color: var(--cinza);
+    text-decoration: none;
+}
+
+.header .logout:hover{
+    color: black;
+}
+
+
+
+/* Video de fundo da pagina home */
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* mascara negra que fica acima do video */
+.video .mascara {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.9)50%, rgba(10, 12, 16, 0.99)85%);
+}
+
+/* conteudo do slide */
+.box-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    width: 80vw;
+    height: auto;
+    margin-top: 3%;
+    opacity: 0;
+    transform: translatex(110%);
+    transition: all 0.6s ease;
+    position: absolute;
+    z-index: 0;
+}
+
+.container.active {
+    z-index: 1;
+    animation: sumir 10s ease;
+    transform: translateX(0);
+}
+
+@keyframes sumir {
+    0% {
+        opacity: 1;
+    }
+
+    1% {
+        opacity: 0.99;
+    }
+
+    2% {
+        opacity: 0.98;
+    }
+
+    3% {
+        opacity: 0.97;
+    }
+
+    4% {
+        opacity: 0.96;
+    }
+
+    5% {
+        opacity: 0.95;
+    }
+
+    6% {
+        opacity: 0.94;
+    }
+
+    7% {
+        opacity: 0.93;
+    }
+
+    8% {
+        opacity: 0.92;
+    }
+
+    9% {
+        opacity: 0.91;
+    }
+
+    10% {
+        opacity: 0.90;
+    }
+
+    11% {
+        opacity: 0.89;
+    }
+
+    12% {
+        opacity: 0.88;
+    }
+
+    13% {
+        opacity: 0.87;
+    }
+
+    14% {
+        opacity: 0.86;
+    }
+
+    15% {
+        opacity: 0.85;
+    }
+
+    16% {
+        opacity: 0.84;
+    }
+
+    17% {
+        opacity: 0.83;
+    }
+
+    18% {
+        opacity: 0.82;
+    }
+
+    19% {
+        opacity: 0.81;
+    }
+
+    20% {
+        opacity: 0.80;
+    }
+
+    21% {
+        opacity: 0.79;
+    }
+
+    22% {
+        opacity: 0.78;
+    }
+
+    23% {
+        opacity: 0.77;
+    }
+
+    24% {
+        opacity: 0.76;
+    }
+
+    25% {
+        opacity: 0.75;
+    }
+
+    26% {
+        opacity: 0.74;
+    }
+
+    27% {
+        opacity: 0.73;
+    }
+
+    28% {
+        opacity: 0.72;
+    }
+
+    29% {
+        opacity: 0.71;
+    }
+
+    30% {
+        opacity: 0.70;
+    }
+
+    31% {
+        opacity: 0.69;
+    }
+
+    32% {
+        opacity: 0.68;
+    }
+
+    33% {
+        opacity: 0.67;
+    }
+
+    34% {
+        opacity: 0.66;
+    }
+
+    35% {
+        opacity: 0.65;
+    }
+
+    36% {
+        opacity: 0.64;
+    }
+
+    37% {
+        opacity: 0.63;
+    }
+
+    38% {
+        opacity: 0.62;
+    }
+
+    39% {
+        opacity: 0.61;
+    }
+
+    40% {
+        opacity: 0.60;
+    }
+
+    41% {
+        opacity: 0.59;
+    }
+
+    42% {
+        opacity: 0.58;
+    }
+
+    43% {
+        opacity: 0.57;
+    }
+
+    44% {
+        opacity: 0.56;
+    }
+
+    45% {
+        opacity: 0.55;
+    }
+
+    46% {
+        opacity: 0.54;
+    }
+
+    47% {
+        opacity: 0.53;
+    }
+
+    48% {
+        opacity: 0.52;
+    }
+
+    49% {
+        opacity: 0.51;
+    }
+
+    50% {
+        opacity: 0.50;
+    }
+
+    51% {
+        opacity: 0.49;
+    }
+
+    52% {
+        opacity: 0.48;
+    }
+
+    53% {
+        opacity: 0.47;
+    }
+
+    54% {
+        opacity: 0.46;
+    }
+
+    55% {
+        opacity: 0.45;
+    }
+
+    56% {
+        opacity: 0.44;
+    }
+
+    57% {
+        opacity: 0.43;
+    }
+
+    58% {
+        opacity: 0.42;
+    }
+
+    59% {
+        opacity: 0.41;
+    }
+
+    60% {
+        opacity: 0.40;
+    }
+
+    61% {
+        opacity: 0.39;
+    }
+
+    62% {
+        opacity: 0.38;
+    }
+
+    63% {
+        opacity: 0.37;
+    }
+
+    64% {
+        opacity: 0.36;
+    }
+
+    65% {
+        opacity: 0.35;
+    }
+
+    66% {
+        opacity: 0.34;
+    }
+
+    67% {
+        opacity: 0.33;
+    }
+
+    68% {
+        opacity: 0.32;
+    }
+
+    69% {
+        opacity: 0.31;
+    }
+
+    70% {
+        opacity: 0.30;
+    }
+
+    71% {
+        opacity: 0.29;
+    }
+
+    72% {
+        opacity: 0.28;
+    }
+
+    73% {
+        opacity: 0.27;
+    }
+
+    74% {
+        opacity: 0.26;
+    }
+
+    75% {
+        opacity: 0.25;
+    }
+
+    76% {
+        opacity: 0.24;
+    }
+
+    77% {
+        opacity: 0.23;
+    }
+
+    78% {
+        opacity: 0.22;
+    }
+
+    79% {
+        opacity: 0.21;
+    }
+
+    80% {
+        opacity: 0.20;
+    }
+
+    81% {
+        opacity: 0.19;
+    }
+
+    82% {
+        opacity: 0.18;
+    }
+
+    83% {
+        opacity: 0.17;
+    }
+
+    84% {
+        opacity: 0.16;
+    }
+
+    85% {
+        opacity: 0.15;
+    }
+
+    86% {
+        opacity: 0.14;
+    }
+
+    87% {
+        opacity: 0.13;
+    }
+
+    88% {
+        opacity: 0.12;
+    }
+
+    89% {
+        opacity: 0.11;
+    }
+
+    90% {
+        opacity: 0.10;
+    }
+
+    91% {
+        opacity: 0.09;
+    }
+
+    92% {
+        opacity: 0.08;
+    }
+
+    93% {
+        opacity: 0.07;
+    }
+
+    94% {
+        opacity: 0.06;
+    }
+
+    95% {
+        opacity: 0.05;
+    }
+
+    96% {
+        opacity: 0.04;
+    }
+
+    97% {
+        opacity: 0.03;
+    }
+
+    98% {
+        opacity: 0.02;
+    }
+
+    99% {
+        opacity: 0.01;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.container .image {
+    width: 60%;
+    height: 100%;
+
+}
+
+.container .image img {
+    width: 100%;
+    height: 100%;
+    margin-left: 5rem;
+    object-fit: contain;
+}
+
+.container .description {
+    width: 40%;
+    height: 100%;
+    padding: 2.5rem 7rem;
+}
+
+.container .description .title {
+    font-size: 4rem;
+    color: var(--laranja);
+}
+
+.container .description p {
+    font-size: 2rem;
+    color: white;
+}
+
+
+
+/* footer */
+.footer {
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 12vh;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%;
+    margin-top: 2rem;
+}
+
+.footer .icones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    padding-bottom: 0.9rem;
+    margin: 0 auto;
+}
+
+.footer .cnpj {
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+}
+
+/* PAGINA SERVICE */
+.service-container {
+    width: 100vw;
+    height: auto;
+    padding: 2rem;
+}
+
+.service-container h1 {
+    font-size: 4rem;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 3px #565e64;
+}
+
+.service-box {
+    width: 100%;
+    padding: 2rem 5%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    /* background-color: red; */
+}
+
+.colaborator {
+    align-self: flex-start;
+    /*comando para a div ocupar apenas o espaço do conteudo*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 28rem;
+    height: auto;
+    /* background-color: yellow; */
+}
+
+.colaborator:hover {
+    transform: scale(1.1);
+}
+
+.colaborator-image {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+.colaborator-image img {
+    width: 26rem;
+    height: 19rem;
+    border-radius: 1rem 1rem 0 0;
+    border: none;
+    /* remove borda explícita */
+    outline: none;
+    /* remove contorno de foco */
+    box-shadow: none;
+    /* remove qualquer sombra */
+    display: block;
+    /* evita espaçamento extra de imagem */
+}
+
+.colaborator-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: white;
+    text-align: center;
+    width: 25rem;
+    height: 10rem;
+    /* background-color: red; */
+}
+
+.colaborator-name h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.colaborator-btn a {
+    color: white;
+    padding: 0.8rem 4rem;
+    background-color: #ff7300;
+    font-family: "Orbitron";
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.colaborator-btn a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+/* pagina de especificções de profissôes */
+/* terceirização.html, recrutamento.html, limpeza.html, jardinagem.html, etc .... */
+.profissao-container {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* background-color: red; */
+}
+
+.profissao-container a {
+    color: white;
+    padding: 0.8rem 4rem;
+    background-color: #ff7300;
+    font-family: "Orbitron";
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    width: 20%;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.profissao-container a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.profissao-image {
+    width: 30rem;
+    height: auto;
+}
+
+.profissao-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.profissao-text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+    /* background-color: yellow; */
+}
+
+.profissao-text h1 {
+    font-size: 3rem;
+    font-family: "Orbitron", sans-serif;
+    color: #ff7300;
+}
+
+.profissao-text p {
+    color: white;
+    font-size: 1.8rem;
+    text-align: justify;
+}
+
+.profissao-text a {
+    text-decoration: none;
+}
+
+.sobre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 5%;
+
+    /* background-color: red; */
+}
+
+.sobre p {
+    color: white;
+    font-size: 2rem;
+}
+
+.sobre span {
+    color: #ff7300;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* pagina fale-conosco.html */
+.fale-conosco-container {
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+}
+
+.fale-conosco p {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ff7300;
+}
+
+.fale-conosco .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    /* background-color: yellow; */
+}
+
+.fale-conosco .message label {
+    font-size: 4rem;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 3px #565e64;
+    margin-bottom: 2rem;
+}
+
+.fale-conosco .message textarea {
+    border-radius: 1rem;
+    border: none;
+    padding: 2rem;
+    font-size: 2rem;
+    outline: none;
+}
+
+.fale-conosco .message textarea::placeholder {
+    font-size: 2rem;
+}
+
+.fale-conosco .button-comentar {
+    display: flex;
+    justify-content: center;
+}
+
+.fale-conosco .btn-comentar {
+    color: white;
+    font-size: 1.5rem;
+    font-family: "Orbitron", sans-serif;
+    border: none;
+    padding: 1rem 35rem;
+    border-radius: 1rem;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    background-color: #ff7300;
+}
+
+.fale-conosco .btn-comentar:hover {
+    color: black;
+}
+
+/* pagina login */
+.formLogin {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.formLogin h1 {
+    font-size: 4rem;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.5rem;
+    text-shadow: 2px 2px 3px #565e64;
+}
+
+.formLogin form {
+    width: 30%;
+    margin-top: 1rem;
+}
+
+.formLogin label {
+    color: #ff7300;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.formLogin input {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.formLogin input[type="password"] {
+    font-size: 1.5rem !important;
+}
+
+
+.btn-primary {
+    border: none;
+    background-color: #ff7300;
+    border-radius: 1rem;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+}
+
+.btn-primary:hover {
+    background-color: #ff7300;
+    color: black;
+}
+
+
+.links a {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* pagina create account */
+
+.create-account {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.create-account h1 {
+    font-size: 4rem;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.5rem;
+    text-shadow: 2px 2px 3px #565e64;
+}
+
+.create-account form {
+    width: 30%;
+    margin-top: 1rem;
+}
+
+.create-account label {
+    color: #ff7300;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.create-account input {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.create-account input[type="password"] {
+    font-size: 1.5rem !important;
+}
+
+.create-account .radio {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* pagina perfil */

@@ -20,7 +20,7 @@
                 interno, além de garantir maior produtividade e organização nos processos. Oferecemos soluções
                 personalizadas para atender às demandas específicas do seu negócio com responsabilidade e excelência.
             </p>
-            <a href="{{route('servicos')}}">Voltar</a>
+            <a href="{{route('servicos')}}"class="btn-voltar">Voltar</a>
         </div>
 
     </main>

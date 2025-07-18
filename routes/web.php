@@ -15,7 +15,14 @@ Route::view('/piscineiro', 'Pages.piscineiro')->name('piscineiro');
 Route::view('/recrutamento', 'Pages.recrutamento')->name('recrutamento');
 Route::view('/terceirizacao', 'Pages.terceirizacao')->name('terceirizacao');
 Route::view('/vigilante', 'Pages.vigilante')->name('vigilante');
+Route::view('/login', 'Pages.login')->name('login');
+Route::post('/login-submit', [MainController::class, 'loginSubmit'])->name('login-submit');
+Route::view('/create-account', 'Pages.create-account')->name('create-account');
+Route::post('/create-account-submit', [MainController::class, 'createAccountSubmit'])->name('create-account-submit');
 
+Route::get('/logout', [MainController::class, 'logout'])->name('logout');
+Route::view('/perfil', 'Auth.perfil')->name('perfil');
+Route::post('/atualizar', [MainController::class, 'atualizar'])->name('atualizar');
 Route::post('/comentario', [MainController::class, 'comentario'])->name('comentario');
 
 

@@ -1,3 +1,7 @@
+
+/////////////////////////////////////
+    // TRECHO PARA ANIMAR O SLIDE
+/////////////////////////////////////
 const slides = document.querySelectorAll('.container')
 
 let current = 0
@@ -18,6 +22,16 @@ function nextSlide(){
 }
 
 showSlide(current)
-
 setInterval(nextSlide, 8000)
+
+//************************************************* */
+
+/////////////////////////////////////
+    // TRECHO PARA APARECER O FORMULARIO NA PAGINA PERFIL
+/////////////////////////////////////
+
+function mostrarForm(){
+    form = document.querySelector('.form-container')
+    form.classList.add('visibility')
+}
 
