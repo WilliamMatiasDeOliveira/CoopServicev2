@@ -38,8 +38,14 @@ class MainController extends Controller
 
             if ($user->tipo === 'visitante') {
                 return redirect()->route('home');
-            } else {
-                return redirect()->route('perfil');
+            } else if($user->tipo === 'servico') {
+                if($user->cargo == null){
+                    return redirect()->route("cargo");
+                }else{
+                    return redirect()->route('perfil');
+                }
+            }else if($user->tipo === 'admin'){
+                return redirect()->route('admin');
             }
         } else {
             $userNotExist = "Login ou Senha inválidos";
@@ -87,6 +93,7 @@ class MainController extends Controller
         User::create([
             "nome" => strtolower($request->input('nome')),
             "email" => strtolower($request->input('email')),
+            "phone"=>$request->input('phone'),
             "cidade" => strtolower($request->input('cidade')),
             "password" => strtolower($request->input('password')),
             "tipo" => strtolower($request->input('tipo'))
@@ -94,6 +101,17 @@ class MainController extends Controller
 
         $loginsuccess = "Sua conta foi criada com sucesso !";
         return redirect()->route('login')->with(compact('loginsuccess'));
+    }
+
+    public function cargoSubmit(Request $request){
+        $cargo = $request->input('cargo');
+        $user = Auth::user();
+
+        $user->cargo = $cargo;
+        $user->save();
+
+        return redirect()->route('perfil');
+
     }
 
     public function logout()
@@ -150,7 +168,7 @@ class MainController extends Controller
             }
         }
 
-        $user->save;
+        $user->save();
 
 
         return back()->with('success', 'Perfil atualizado com sucesso!');
@@ -177,6 +195,8 @@ class MainController extends Controller
                 'user_id' => Auth::id(),
                 'texto' => $request->input('message')
             ]);
+
+
             $messageSuccess = "Sua mensagem foi enviada com sucesso.";
             return redirect()->route('fale-conosco')->with(compact('messageSuccess'));
         } else {
@@ -184,4 +204,37 @@ class MainController extends Controller
             return redirect()->route('create-account')->with(compact('youNeedCreateUser'));
         }
     }
+
+    public function faleConosco(){
+        $comentarios = Comentario::with('user')->get();
+
+        return view('Pages.fale-conosco', compact('comentarios'));
+    }
+
+    public function tipoProfissaoSubmit(Request $request){
+        $tipo_profissao = $request->input('tipo-profissao');
+        $tipo_profissao = strtolower($tipo_profissao);
+
+        $users = User::where('cargo', $tipo_profissao)->get();
+
+        if($users == null){
+            $users = [];
+        }
+
+        return view('Auth.exibe-profissao')->with(compact('users'));
+    }
+
+    public function perfil(){
+        $user = Auth::user();
+
+        if($user->tipo == 'servico' || $user->tipo == 'visitante'){
+            return view('Auth.perfil');
+        }else{
+            return view('Auth.admin');
+        }
+    }
+
+
+
+
 }

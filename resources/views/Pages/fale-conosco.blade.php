@@ -3,14 +3,13 @@
 
 @section('content')
 
-{{-- Se o usuario estiver logado e mandar uma menssagem
+    {{-- Se o usuario estiver logado e mandar uma menssagem
 ele recebera uma menssagem de sucesso --}}
-@if (session('messageSuccess'))
-<div class="alert alert-success text-center"style="font-size:1.2rem;">
-    {{session('messageSuccess')}}
-</div>
-
-@endif
+    @if (session('messageSuccess'))
+        <div class="alert alert-success text-center"style="font-size:1.2rem;">
+            {{ session('messageSuccess') }}
+        </div>
+    @endif
 
     <div class="fale-conosco-container">
 
@@ -22,14 +21,14 @@ ele recebera uma menssagem de sucesso --}}
                 Ou se você preferir pode nos deixar um comentario : )
             </p>
 
-            <form action="{{route('comentario')}}" method="post">
+            <form action="{{ route('comentario') }}" method="post">
                 @csrf
                 <div class="message">
                     <label for="message">Menssagem</label>
                     <textarea name="message" id="message" rows="5" cols="70" placeholder="Digite sua mensagem aqui ......"></textarea>
                     @error('message')
                         <div class="text-warning text-center"style="font-size:1.2rem">
-                            {{$message}}
+                            {{ $message }}
                         </div>
                     @enderror
                 </div>
@@ -39,6 +38,41 @@ ele recebera uma menssagem de sucesso --}}
                 </div>
             </form>
         </section>
+    </div>
+
+    <style>
+        .comentarios{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+            /* background-color: yellow; */
+        }
+
+        .comentarios .user{
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            padding: 2rem;
+            width: 80%;
+
+            background-color: rgba(86, 94, 100, 0.5);
+        }
+    </style>
+
+    <div class="comentarios">
+        @if (isset($comentarios))
+           @foreach ($comentarios as $comentario)
+                <div class="user">
+                    Nome : {{$comentario->user->nome}}
+                    <br>
+                    Cidade : {{$comentario->user->cidade}}
+                    <br>
+                    Comentario : {{$comentario->texto}}
+                </div>
+           @endforeach
+        @endif
     </div>
 
 @endsection

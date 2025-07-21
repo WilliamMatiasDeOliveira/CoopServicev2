@@ -37,6 +37,14 @@
                 </div>
             @enderror
 
+            <label for="phone" class="form-label">Telefone</label>
+            <input type="phone"name="phone" class="form-control">
+            @error('email')
+                <div class="text-warning"style="font-size: 1.2rem;">
+                    {{ $message }}
+                </div>
+            @enderror
+
             <label for="cidade" class="form-label">Cidade</label>
             <input type="text"name="cidade" class="form-control">
             @error('cidade')

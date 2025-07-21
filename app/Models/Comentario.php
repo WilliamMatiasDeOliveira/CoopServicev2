@@ -9,4 +9,8 @@ class Comentario extends Model
 {
     use SoftDeletes;
     protected $fillable = ['user_id', 'texto'];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

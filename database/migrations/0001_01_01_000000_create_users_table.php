@@ -15,11 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('email')->unique();
+            $table->string('phone');
             $table->string('cidade')->nullable();
             $table->string('password');
             $table->string('tipo');
             $table->string('foto')->nullable();
             $table->string('curriculo')->nullable();
+            $table->string('cargo')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

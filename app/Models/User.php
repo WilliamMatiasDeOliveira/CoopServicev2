@@ -20,11 +20,13 @@ class User extends Authenticatable
     protected $fillable = [
         'nome',
         'email',
+        'phone',
         'cidade',
         'password',
         'tipo',
         'foto',
-        'curriculo'
+        'curriculo',
+        'cargo'
     ];
 
     /**
@@ -48,5 +50,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+    public function comentarios(){
+        return $this->hasMany(Comentario::class);
     }
 }

@@ -40,6 +40,7 @@
 
         .perfil-container .left-menu .dados {
             color: white;
+            padding: 3rem;
         }
 
         .perfil-container .left-menu .dados h2 {
@@ -66,32 +67,33 @@
             font-size: 1.5rem;
         }
 
-        .form-container {
-            margin-left: 120rem;
-            background-color: rgba(86, 94, 100, 0.5);
-            padding: 2rem;
-            border-radius: 1rem;
-        }
-
-        .form-container.visibility {
+        .form-update {
+            display: none;
             margin: 0 auto;
             background-color: rgba(86, 94, 100, 0.5);
             padding: 2rem;
             border-radius: 1rem;
         }
 
-        .form-container label {
+        .form-update.visivel {
+            display: block;
+            background-color: rgba(86, 94, 100, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .form-update label {
             color: #ff7300;
             font-size: 1.2rem;
             margin-top: 1rem;
             font-weight: bold;
         }
 
-        .form-container input {
+        .form-update input {
             font-size: 1.5rem;
         }
 
-        .form-container .files {
+        .form-update .files {
             margin-top: 2rem;
         }
     </style>
@@ -116,7 +118,7 @@
                 <h2>{{ Auth::user()->cidade }}</h2>
             </div>
 
-            <a href="#"onclick="mostrarForm()">ATUALIZAR</a>
+            <a href="#" class="btn-atualizar">ATUALIZAR</a>
 
             @if (Auth::user()->curriculo)
                 <a href="{{ asset('assets/curriculos/' . Auth::user()->curriculo) }}" target="_blank">Ver Currículo</a>
@@ -125,7 +127,7 @@
             @endif
         </div>
 
-        <div class="form-container">
+        <div class="form-update">
             <form action="{{ route('atualizar') }}" method="post"enctype="multipart/form-data">
                 @csrf
 
@@ -158,5 +160,21 @@
 
 
     </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.querySelector('.btn-atualizar');
+        const form = document.querySelector('.form-update');
+
+        if (btn && form) {
+            btn.addEventListener('click', function(event) {
+                event.preventDefault(); // evitar que o link pule para o topo
+                form.classList.toggle('visivel'); // alterna a visibilidade
+            });
+        }
+    });
+</script>
+
 
 @endsection

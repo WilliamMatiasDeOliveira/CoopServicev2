@@ -1,6 +1,6 @@
 
 /////////////////////////////////////
-    // TRECHO PARA ANIMAR O SLIDE
+// TRECHO PARA ANIMAR O SLIDE
 /////////////////////////////////////
 const slides = document.querySelectorAll('.container')
 
@@ -10,13 +10,13 @@ function showSlide(index) {
     slides.forEach((slide, i) => {
         if (i === index) {
             slide.classList.add('active')
-        }else{
+        } else {
             slide.classList.remove('active')
         }
     })
 }
 
-function nextSlide(){
+function nextSlide() {
     current = (current + 1) % slides.length
     showSlide(current)
 }
@@ -26,12 +26,18 @@ setInterval(nextSlide, 8000)
 
 //************************************************* */
 
-/////////////////////////////////////
-    // TRECHO PARA APARECER O FORMULARIO NA PAGINA PERFIL
-/////////////////////////////////////
 
-function mostrarForm(){
-    form = document.querySelector('.form-container')
-    form.classList.add('visibility')
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
