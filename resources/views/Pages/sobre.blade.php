@@ -3,6 +3,69 @@
 
 @section('content')
 
+    <style>
+        .sobre {
+            margin-top: 3rem;
+            padding: 0 5%;
+            /* background-color: red; */
+        }
+
+        .cultura{
+            display: flex;
+            justify-content: space-around;
+            padding: 0 5%;
+            /* background-color: yellow; */
+        }
+
+        .cultura div{
+            width: 30%;
+            border: 1px solid silver;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 1rem;
+
+        }
+
+        .cultura h2{
+            color: #ff7300;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .cultura p{
+            color: white;
+            font-size: 1.5rem;
+            text-align: justify;
+        }
+    </style>
+
+    <div class="cultura">
+        <div>
+            <h2>Missão</h2>
+            <p>
+                Facilitar a conexão entre empresas que buscam mão de obra qualificada e freelancers talentosos, oferecendo
+                uma plataforma que valoriza a flexibilidade, a diversidade e a inovação, com foco na excelência,
+                comprometimento e satisfação dos clientes
+            </p>
+        </div>
+        <div>
+            <h2>Visão</h2>
+            <p>
+                Ser uma referência em soluções de serviços flexíveis e de qualidade, promovendo a colaboração e o
+                desenvolvimento profissional de freelancers, gerando agilidade e excelência nos serviços prestados, conforme
+                as necessidades dos clientes.
+            </p>
+
+        </div>
+        <div>
+            <h2>Valores</h2>
+            <p>
+                Executar e satisfazer os clientes com excelência, dedicação com segurança e comprometimento.
+            </p>
+        </div>
+    </div>
+
     <div class="sobre">
 
         <p>

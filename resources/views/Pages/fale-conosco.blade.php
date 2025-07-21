@@ -75,4 +75,26 @@ ele recebera uma menssagem de sucesso --}}
         @endif
     </div>
 
+    <script>
+    // Espera o carregamento completo da página
+    document.addEventListener('DOMContentLoaded', function () {
+        // Seleciona todos os elementos com a classe 'alert'
+        const alerts = document.querySelectorAll('.alert');
+
+        // Espera 3 segundos antes de ocultar
+        setTimeout(() => {
+            alerts.forEach(alert => {
+                // Opcional: animação suave de desvanecimento
+                alert.style.transition = 'opacity 0.5s ease';
+                alert.style.opacity = '0';
+
+                // Remove do DOM após a animação
+                setTimeout(() => {
+                    alert.remove();
+                }, 500); // tempo da transição
+            });
+        }, 3000); // 3000ms = 3 segundos
+    });
+</script>
+
 @endsection

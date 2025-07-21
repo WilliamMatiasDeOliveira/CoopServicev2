@@ -103,7 +103,8 @@ class MainController extends Controller
         return redirect()->route('login')->with(compact('loginsuccess'));
     }
 
-    public function cargoSubmit(Request $request){
+    public function cargoSubmit(Request $request)
+    {
         $cargo = $request->input('cargo');
         $user = Auth::user();
 
@@ -205,13 +206,15 @@ class MainController extends Controller
         }
     }
 
-    public function faleConosco(){
+    public function faleConosco()
+    {
         $comentarios = Comentario::with('user')->get();
 
         return view('Pages.fale-conosco', compact('comentarios'));
     }
 
-    public function tipoProfissaoSubmit(Request $request){
+    public function tipoProfissaoSubmit(Request $request)
+    {
         $tipo_profissao = $request->input('tipo-profissao');
         $tipo_profissao = strtolower($tipo_profissao);
 
@@ -224,13 +227,19 @@ class MainController extends Controller
         return view('Auth.exibe-profissao')->with(compact('users'));
     }
 
-    public function perfil(){
-        $user = Auth::user();
+    public function perfil()
+    {
+        if(Auth::check()){
+            $user = Auth::user();
 
-        if($user->tipo == 'servico' || $user->tipo == 'visitante'){
-            return view('Auth.perfil');
+            if($user->tipo == 'servico' || $user->tipo == 'visitante'){
+                return view('Auth.perfil');
+            }else{
+                return view('Auth.admin');
+            }
         }else{
-            return view('Auth.admin');
+            $create_account = "Para acessar o perfil você precisa ter uma conta";
+            return redirect()->route('create-account')->with(compact('create_account'));
         }
     }
 

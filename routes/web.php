@@ -20,6 +20,7 @@ Route::post('/login-submit', [MainController::class, 'loginSubmit'])->name('logi
 Route::view('/create-account', 'Pages.create-account')->name('create-account');
 Route::post('/create-account-submit', [MainController::class, 'createAccountSubmit'])->name('create-account-submit');
 
+
 Route::get('/logout', [MainController::class, 'logout'])->name('logout');
 Route::get('/perfil', [MainController::class, 'perfil'])->name('perfil');
 Route::post('/atualizar', [MainController::class, 'atualizar'])->name('atualizar');
