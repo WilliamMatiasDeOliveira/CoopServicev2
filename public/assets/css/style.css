@@ -1119,27 +1119,6 @@ body {
 .profissao-text a {
     text-decoration: none;
 }
-/*
-.sobre {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 0 5%;
-
-}
-
-.sobre p {
-    color: white;
-    font-size: 2rem;
-}
-
-.sobre span {
-    color: #ff7300;
-    font-size: 2rem;
-    font-weight: bold;
-} */
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* paginas de PROFISSÕES onde especifica cada serviço TABLET*/
@@ -1168,24 +1147,24 @@ body {
 /* paginas de PROFISSÕES onde especifica cada serviço CELULAR*/
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 @media (max-width: 767px) {
-    .profissao-container{
+    .profissao-container {
         display: flex;
         flex-direction: column;
     }
 
-    .profissao-container .profissao-text{
+    .profissao-container .profissao-text {
         width: 90%;
     }
 
-    .profissao-container .profissao-text h1{
+    .profissao-container .profissao-text h1 {
         text-align: center;
     }
 
-    .profissao-container .profissao-text p{
+    .profissao-container .profissao-text p {
         text-align: center;
     }
 
-    .profissao-container .profissao-text a{
+    .profissao-container .profissao-text a {
         width: 50%;
         padding: 0.5rem 2rem;
 
@@ -1193,6 +1172,123 @@ body {
 
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*      PAGINA SOBRE
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina sobre DESKTOP
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+.sobre-container {
+    padding: 2rem 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sobre-container .cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sobre-container .cards div {
+    width: 30%;
+    border: 1px solid silver;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+
+.sobre-container .cards h2 {
+    color: #ff7300;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sobre-container .cards p {
+    color: white;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.sobre-container .sobre {
+    width: 100%;
+    height: 100%;
+    margin-top: 3rem;
+    padding: 0 5%;
+
+}
+
+.sobre-container .sobre p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.sobre-container .sobre span {
+    color: #ff7300;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina sobre TABLET
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .sobre-container .cards{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sobre-container .cards div{
+        width: 90%;
+    }
+
+    .sobre-container .cards div p{
+        font-size: 2rem;
+    }
+
+    .sobre-container .sobre p{
+        font-size: 2rem;
+    }
+
+    .sobre-container .sobre span{
+        font-size: 2rem;
+    }
+
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina sobre CELULAR
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 767px) {
+    .sobre-container .cards{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sobre-container .cards div{
+        width: 90%;
+    }
+
+    .sobre-container .cards div p{
+        font-size: 1.5rem;
+    }
+
+    .sobre-container .sobre{
+        text-align: center;
+    }
+
+    .sobre-container .sobre p{
+        font-size: 1.5rem;
+    }
+
+    .sobre-container .sobre span{
+        font-size: 1.5rem;
+    }
+}
 
 
 
