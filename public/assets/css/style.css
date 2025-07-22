@@ -1058,7 +1058,7 @@ body {
 
 .profissao-container {
     width: 100%;
-    height: 100%;
+    height: auto;
     padding: 2rem 5%;
     display: flex;
     justify-content: center;
@@ -1119,7 +1119,7 @@ body {
 .profissao-text a {
     text-decoration: none;
 }
-
+/*
 .sobre {
     display: flex;
     flex-direction: column;
@@ -1139,12 +1139,60 @@ body {
     color: #ff7300;
     font-size: 2rem;
     font-weight: bold;
-}
+} */
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* paginas de PROFISSÕES onde especifica cada serviço TABLET*/
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
-.profissao-container {}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .profissao-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profissao-container .profissao-text {
+        width: 80%;
+    }
+
+    .profissao-container .profissao-text h1 {
+        text-align: center;
+    }
+
+    .profissao-container .profissao-text a {
+        padding: 0.5rem 1rem;
+    }
+
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* paginas de PROFISSÕES onde especifica cada serviço CELULAR*/
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 767px) {
+    .profissao-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profissao-container .profissao-text{
+        width: 90%;
+    }
+
+    .profissao-container .profissao-text h1{
+        text-align: center;
+    }
+
+    .profissao-container .profissao-text p{
+        text-align: center;
+    }
+
+    .profissao-container .profissao-text a{
+        width: 50%;
+        padding: 0.5rem 2rem;
+
+    }
+
+}
+
 
 
 

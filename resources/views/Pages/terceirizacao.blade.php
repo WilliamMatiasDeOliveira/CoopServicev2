@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <main class="profissao-container">
+    <section class="profissao-container">
         <div class="profissao-image">
             <img src="{{asset('assets/imgs/colaborator.jpg')}}" alt="">
         </div>
@@ -27,6 +27,6 @@
             <a href="{{route('servicos')}}">Voltar</a>
         </div>
 
-    </main>
+    </section>
 
 @endsection
