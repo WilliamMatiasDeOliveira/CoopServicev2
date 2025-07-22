@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A Coop. Service é uma terceirização de mão de obra, ideal para quem busca eficiência, praticidade, segurança e qualidade na realização de serviços, comerciais, residenciais e industriais. Com uma equipe qualificada, responsável e comprometida em atender com excelência.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- fonts google -->
@@ -13,8 +15,18 @@
     {{-- bootstrap css --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- link favicon -->
+    <link rel="icon" href="{{asset('assets/imgs/favicon.ico')}}" sizes="16x14" />
+    <link rel="icon" href="{{asset('assets/imgs/favicon-180x180.png')}}" sizes="180x180" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/imgs/favicon-180x180.png')}}">
+
+    <!--canonical-->
+    <link rel="canonical" href="https://coopservice.site/" />
+
+    <meta name="msvalidate.01" content="3734046EA1113FAAC9E65E2694960965" />
+
     <!-- css aplication -->
-    <link rel="stylesheet" href="{{ asset('assets/css/estilo.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <title>@yield('title')</title>
 </head>
@@ -27,7 +39,7 @@
             <span>Coop Service</span>
         </div>
 
-        <div id="btnMenu" data-bs-toggle="collapse" data-bs-target="#menu">
+        <div id="btnMenu" data-bs-toggle="collapse" data-bs-target="#menu"aria-expanded="false" aria-controls="menu">
             <div class="hamburguer">
                 <span></span>
                 <span></span>
@@ -41,7 +53,7 @@
             <a href="{{ route('servicos') }}">Serviços</a>
             <a href="{{ route('sobre') }}">Sobre</a>
             <a href="{{ route('fale-conosco') }}">Fale Conosco</a>
-            <a href="{{route('perfil')}}">Meu Perfil</a>
+            <a href="{{ route('perfil') }}">Meu Perfil</a>
         </div>
 
         @guest
@@ -49,7 +61,7 @@
         @endguest
 
         @auth
-            <a href="{{route('logout')}}"class="logout">Logout</a>
+            <a href="{{ route('logout') }}"class="logout">Logout</a>
         @endauth
 
     </header>

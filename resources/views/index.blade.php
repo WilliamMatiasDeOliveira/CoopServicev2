@@ -26,7 +26,7 @@
             <section class="description">
                 <h2 class="title">RECRUTAMENTO</h2>
                 <p>Você quer contratar ?</p>
-                <p>Mais não quer burocracia ?</p>
+                <p>E não quer burocracia ?</p>
                 <p>Deixe toda a burocracia com a gente.</p>
                 <br>
                 <p>Selecionamos profissionais qualificados <br> para a sua empresa.</p>
