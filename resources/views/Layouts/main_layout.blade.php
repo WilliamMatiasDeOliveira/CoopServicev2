@@ -16,9 +16,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <!-- link favicon -->
-    <link rel="icon" href="{{asset('assets/imgs/favicon.ico')}}" sizes="16x14" />
-    <link rel="icon" href="{{asset('assets/imgs/favicon-180x180.png')}}" sizes="180x180" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/imgs/favicon-180x180.png')}}">
+    <link rel="icon" href="{{ asset('assets/imgs/favicon.ico') }}" sizes="16x14" />
+    <link rel="icon" href="{{ asset('assets/imgs/favicon-180x180.png') }}" sizes="180x180" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/imgs/favicon-180x180.png') }}">
 
     <!--canonical-->
     <link rel="canonical" href="https://coopservice.site/" />
@@ -34,17 +34,20 @@
 <body>
 
     <header class="header">
-        <div class="logo">
-            <img src="{{ asset('assets/imgs/logo.png') }}" alt="Logo da Coop service">
-            <span>Coop Service</span>
-        </div>
+        <div class="top-header">
+            <div class="logo">
+                <img src="{{ asset('assets/imgs/logo.png') }}" alt="Logo da Coop service">
+                <span>Coop Service</span>
+            </div>
 
-        <div id="btnMenu" data-bs-toggle="collapse" data-bs-target="#menu"aria-expanded="false" aria-controls="menu">
-            <div class="hamburguer">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+            <div id="btnMenu" data-bs-toggle="collapse" data-bs-target="#menu"aria-expanded="false"
+                aria-controls="menu">
+                <div class="hamburguer">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
 
@@ -54,15 +57,23 @@
             <a href="{{ route('sobre') }}">Sobre</a>
             <a href="{{ route('fale-conosco') }}">Fale Conosco</a>
             <a href="{{ route('perfil') }}">Meu Perfil</a>
+
+            @guest
+                <a href="{{ route('login') }}"class="login">Entrar</a>
+            @endguest
+
+            @auth
+                <a href="{{ route('logout') }}"class="logout">Logout</a>
+            @endauth
         </div>
 
-        @guest
+        {{-- @guest
             <a href="{{ route('login') }}"class="login">Entrar</a>
         @endguest
 
         @auth
             <a href="{{ route('logout') }}"class="logout">Logout</a>
-        @endauth
+        @endauth --}}
 
     </header>
 

@@ -153,7 +153,7 @@ body {
     width: 100%;
 }
 
-.header .login {
+.header .collapse .login {
     color: white;
     padding: 0.5rem 3rem;
     font-size: 1.4rem;
@@ -165,11 +165,16 @@ body {
     text-decoration: none;
 }
 
-.header .login:hover {
+.header .collapse .login:hover {
     color: var(--black);
 }
 
-.header .logout {
+.header .collapse .login::after {
+    display: none !important;
+    content: none !important;
+}
+
+.header .collapse .logout {
     color: white;
     padding: 0.5rem 3rem;
     font-size: 1.4rem;
@@ -181,8 +186,13 @@ body {
     text-decoration: none;
 }
 
-.header .logout:hover {
+.header .collapse .logout:hover {
     color: black;
+}
+
+.header .collapse .logout::after {
+    display: none !important;
+    content: none !important;
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -198,9 +208,7 @@ body {
     }
 
     .header .logo {
-        min-width: 100%;
-        display: flex;
-        justify-content: center;
+        max-width: 100%;
     }
 
     .header .logo span {
@@ -215,14 +223,15 @@ body {
     .header .collapse {
         width: 100%;
         padding: 1rem;
-        gap: 2rem;
+        gap: 2.5rem;
         margin-bottom: 2rem;
+        flex-wrap: wrap;
     }
 
 
     .header .collapse a {
         color: var(--cinza);
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: 600;
         position: relative;
         padding: 0.5rem 0;
@@ -237,13 +246,14 @@ body {
         display: none;
     }
 
-    .header .login,
-    .header .logout {
+    .header .collapse .login,
+    .header .collapse .logout {
         width: 30%;
         text-align: center;
         padding: 1rem 2.5rem;
         font-size: 1.5rem;
         letter-spacing: 0.4rem;
+        margin-top: 1.5rem;
     }
 
 }
@@ -254,12 +264,16 @@ body {
 @media (max-width: 767px) {
 
     .header {
+        display: flex;
         flex-direction: column;
         padding: 1rem 5%;
     }
 
-    .header .logo {
-        margin-bottom: 2rem;
+    .header .top-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 
     .header .logo span {
@@ -272,7 +286,6 @@ body {
 
     .header #btnMenu .hamburguer {
         display: flex;
-        margin-bottom: 2rem;
     }
 
     .header .collapse:not(.show) {
@@ -308,11 +321,13 @@ body {
         display: none;
     }
 
-    .header .login,
-    .header .logout {
+    .header .collapse .login,
+    .header .collapse .logout {
         padding: 0.5rem 2rem;
         font-size: 1.2rem;
         margin-top: 1rem;
+        color: white;
+        letter-spacing: 0.2rem;
     }
 
     .video .mascara {
@@ -1235,25 +1250,25 @@ body {
 /* pagina sobre TABLET
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .sobre-container .cards{
+    .sobre-container .cards {
         display: flex;
         align-items: center;
         flex-direction: column;
     }
 
-    .sobre-container .cards div{
+    .sobre-container .cards div {
         width: 90%;
     }
 
-    .sobre-container .cards div p{
+    .sobre-container .cards div p {
         font-size: 2rem;
     }
 
-    .sobre-container .sobre p{
+    .sobre-container .sobre p {
         font-size: 2rem;
     }
 
-    .sobre-container .sobre span{
+    .sobre-container .sobre span {
         font-size: 2rem;
     }
 
@@ -1263,29 +1278,179 @@ body {
 /* pagina sobre CELULAR
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 @media (max-width: 767px) {
-    .sobre-container .cards{
+    .sobre-container .cards {
         display: flex;
         align-items: center;
         flex-direction: column;
     }
 
-    .sobre-container .cards div{
+    .sobre-container .cards div {
         width: 90%;
     }
 
-    .sobre-container .cards div p{
+    .sobre-container .cards div p {
         font-size: 1.5rem;
     }
 
-    .sobre-container .sobre{
+    .sobre-container .sobre {
         text-align: center;
     }
 
-    .sobre-container .sobre p{
+    .sobre-container .sobre p {
         font-size: 1.5rem;
     }
 
-    .sobre-container .sobre span{
+    .sobre-container .sobre span {
+        font-size: 1.5rem;
+    }
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* PAGINA FALE-CONOSCO
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina fale-conosco DESKTOP
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+.fale-conosco-container {
+    width: 100%;
+    height: 100%;
+}
+
+.fale-conosco p {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ff7300;
+}
+
+.fale-conosco .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.fale-conosco .message label {
+    font-size: 4rem;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 3px #565e64;
+    margin-bottom: 2rem;
+}
+
+.fale-conosco .message textarea {
+    border-radius: 1rem;
+    border: none;
+    padding: 2rem;
+    font-size: 2rem;
+    outline: none;
+}
+
+.fale-conosco .message textarea::placeholder {
+    font-size: 2rem;
+}
+
+.fale-conosco .button-comentar {
+    display: flex;
+    justify-content: center;
+}
+
+.fale-conosco .btn-comentar {
+    color: white;
+    font-size: 1.5rem;
+    font-family: "Orbitron", sans-serif;
+    border: none;
+    padding: 1rem 35rem;
+    border-radius: 1rem;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    background-color: #ff7300;
+}
+
+.fale-conosco .btn-comentar:hover {
+    color: black;
+}
+
+.fale-conosco-comentarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.fale-conosco-comentarios .user {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    padding: 2rem;
+    width: 80%;
+
+    background-color: rgba(86, 94, 100, 0.5);
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina fale-conosco TABLET
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .fale-conosco-container .fale-conosco {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .fale-conosco-container .fale-conosco p {
+        font-size: 2rem;
+    }
+
+    .fale-conosco-container .fale-conosco .message textarea {
+        width: 90%;
+    }
+
+    .fale-conosco-container .fale-conosco .btn-comentar {
+        width: 90%;
+        padding: 1rem 4rem;
+    }
+
+    .fale-conosco-comentarios .user {
+        width: 90%;
+        font-size: 2rem;
+    }
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina fale-conosco CELULAR
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 767px) {
+    .fale-conosco-container .fale-conosco {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .fale-conosco-container .fale-conosco p {
+        font-size: 1.5rem;
+    }
+
+    .fale-conosco-container .fale-conosco .message textarea {
+        width: 90%;
+    }
+
+    .fale-conosco-container .fale-conosco .message textarea::placeholder{
+        font-size: 1.5rem;
+    }
+
+    .fale-conosco-container .fale-conosco .btn-comentar {
+        width: 90%;
+        padding: 0.5rem 4rem;
+    }
+
+    .fale-conosco-comentarios .user {
+        width: 90%;
         font-size: 1.5rem;
     }
 }
@@ -1325,7 +1490,44 @@ body {
 
 
 
-/* pagina fale-conosco.html */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .fale-conosco-container {
     width: 100%;
     height: 100%;

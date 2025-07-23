@@ -40,28 +40,7 @@ ele recebera uma menssagem de sucesso --}}
         </section>
     </div>
 
-    <style>
-        .comentarios{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 2rem;
-            /* background-color: yellow; */
-        }
-
-        .comentarios .user{
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-            color: white;
-            font-weight: bold;
-            padding: 2rem;
-            width: 80%;
-
-            background-color: rgba(86, 94, 100, 0.5);
-        }
-    </style>
-
-    <div class="comentarios">
+    <div class="fale-conosco-comentarios">
         @if (isset($comentarios))
            @foreach ($comentarios as $comentario)
                 <div class="user">
