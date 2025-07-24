@@ -1440,7 +1440,7 @@ body {
         width: 90%;
     }
 
-    .fale-conosco-container .fale-conosco .message textarea::placeholder{
+    .fale-conosco-container .fale-conosco .message textarea::placeholder {
         font-size: 1.5rem;
     }
 
@@ -1455,140 +1455,14 @@ body {
     }
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*      PAGINA LOGIN
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.fale-conosco-container {
-    width: 100%;
-    height: 100%;
-}
-
-.fale-conosco p {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #ff7300;
-}
-
-.fale-conosco .message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.fale-conosco .message label {
-    font-size: 4rem;
-    font-family: "Orbitron", sans-serif;
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 3px #565e64;
-    margin-bottom: 2rem;
-}
-
-.fale-conosco .message textarea {
-    border-radius: 1rem;
-    border: none;
-    padding: 2rem;
-    font-size: 2rem;
-    outline: none;
-}
-
-.fale-conosco .message textarea::placeholder {
-    font-size: 2rem;
-}
-
-.fale-conosco .button-comentar {
-    display: flex;
-    justify-content: center;
-}
-
-.fale-conosco .btn-comentar {
-    color: white;
-    font-size: 1.5rem;
-    font-family: "Orbitron", sans-serif;
-    border: none;
-    padding: 1rem 35rem;
-    border-radius: 1rem;
-    letter-spacing: 0.5rem;
-    font-weight: bold;
-    background-color: #ff7300;
-}
-
-.fale-conosco .btn-comentar:hover {
-    color: black;
-}
-
-/* pagina login */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina login DESKTOP
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
 .formLogin {
     width: 100%;
     height: 100%;
@@ -1644,12 +1518,79 @@ body {
 }
 
 
-.links a {
+.formLogin .links a {
     font-size: 1.5rem;
     color: white;
 }
 
-/* pagina create account */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina login TABLET
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .formLogin form {
+        width: 70%;
+    }
+
+    .formLogin label {
+        font-size: 2rem;
+    }
+
+    .formLogin input {
+        font-size: 2rem;
+    }
+
+    .formLogin input[type="password"] {
+        font-size: 2rem !important;
+    }
+
+    .formLogin .links a {
+        font-size: 2rem;
+    }
+
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina login CELULAR
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 767px) {
+    .formLogin form {
+        width: 70%;
+    }
+
+    .formLogin label {
+        font-size: 1.5rem;
+    }
+
+    .formLogin input {
+        font-size: 1.5rem;
+    }
+
+    .formLogin input[type="password"] {
+        font-size: 1.5rem !important;
+        margin-bottom: 3rem;
+    }
+
+    .formLogin input[type="submit"] {
+        margin-top: 2rem;
+    }
+
+    .formLogi .links {
+        background-color: yellow;
+    }
+
+    .formLogin .links a {
+        font-size: 1.5rem;
+    }
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*      PAGINA CREATE ACCOUNT
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina create-account DESKTOP
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .create-account {
     width: 100%;
@@ -1694,5 +1635,262 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina create-account TABLET
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .create-account h1 {
+        font-size: 4rem;
+    }
+
+    .create-account form {
+        width: 70%;
+    }
+
+}
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina create-account CELULAR
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 767px) {
+    .create-account h1 {
+        font-size: 3rem;
+    }
+
+    .create-account form {
+        width: 70%;
+    }
+
+    .create-account label {
+        font-size: 1.3rem;
+    }
+
+    .create-account .radio {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .create-account input[type="submit"] {
+        margin-top: 2rem;
+    }
+
+    .create-account .links a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.3rem;
+        margin-top: 2rem;
+    }
+
+
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*      PAGINA CARGO
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*  pagina cargo DESKTOP
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+.cargo-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cargo-container h2 {
+    color: white;
+    text-shadow: 2px 2px 3px silver;
+}
+
+.cargo-container .cargo-box {
+    width: 50rem;
+    height: 60%;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(86, 94, 100, 0.5);
+}
+
+.cargo-container .cargo-box form {
+    color: #ff7300;
+    font-size: 2rem;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-family: orbitron, sans-serif;
+    font-size: 1.5rem;
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina cargo TABLET
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .cargo-container h2 {
+        font-size: 4rem;
+    }
+
+    .cargo-container .cargo-box {
+        width: 80%;
+        display: flex;
+    }
+
+    .radio-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .radio-group label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-size: 2rem;
+    }
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina cargo CELULAR
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 767px) {
+    .cargo-container h2 {
+        font-size: 2rem;
+    }
+
+    .cargo-container .cargo-box {
+        width: 90%;
+        display: flex;
+    }
+
+    .radio-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .radio-group label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pagina create account */
 
 /* pagina perfil */
