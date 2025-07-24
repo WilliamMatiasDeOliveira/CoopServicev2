@@ -67,6 +67,13 @@
 
         </div>
 
+        <div class="parceiros">
+            <h2>NOSSOS PARCEIROS</h2>
+            <div>
+                <img src="{{asset('assets/imgs/logo-seconcisp.png')}}">
+            </div>
+        </div>
+
     </div>
 
 
