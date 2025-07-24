@@ -2137,15 +2137,12 @@ body {
     height: 100%;
     padding: 2rem;
     border-radius: 0 2rem 2rem 0;
-
     background-color: rgba(86, 94, 100, 0.5);
 }
 
 .perfil-container .left-menu .image {
     width: 40%;
     height: 20%;
-
-    /* background: green; */
 }
 
 .perfil-container .left-menu .image img {
@@ -2233,8 +2230,6 @@ body {
     border-radius: 1rem;
 }
 
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* pagina admin TABLET
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -2308,8 +2303,6 @@ body {
     }
 
 }
-
-
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* pagina admin CELULAR
@@ -2385,10 +2378,83 @@ body {
 
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*      PAGINA EXIBE PROFISSÃO
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina exibe-profissao DESKTOP
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+.profissao-container {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
 
+.profissao-container .btn-voltar {
+    width: 15rem;
+    text-decoration: none;
+}
 
+.profissao-container table thead th,
+.profissao-container table tbody td {
+    font-size: 1.3rem;
+}
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina exibe-profissao TABLET
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .profissao-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .profissao-container .btn-voltar {
+        width: 25rem;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+
+    .profissao-container table {
+        width: 100%;
+        min-width: 100rem;
+        /* força a tabela a ultrapassar a tela em telas menores */
+        border-collapse: collapse;
+    }
+
+    .profissao-container table thead th,
+    .profissao-container table tbody td {
+        font-size: 1.7rem;
+    }
+
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina exibe-profissao CELULAR
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 767px) {
+    .profissao-container .btn-voltar {
+        width: 15rem;
+        text-decoration: none;
+    }
+
+    .profissao-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .profissao-container table {
+        width: 100%;
+        min-width: 100rem;
+        /* força a tabela a ultrapassar a tela em telas menores */
+        border-collapse: collapse;
+    }
+}
 
 
 

@@ -4,29 +4,14 @@
 @section('content')
 
     <style>
-        .profissao-container{
-            width: 100%;
-            height: 100%;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
 
-            /* background-color: yellow; */
-        }
-
-        .profissao-container table thead th,
-        .profissao-container table tbody td{
-            font-size: 1.3rem;
-        }
 
 
     </style>
 
 
     <div class="profissao-container">
-        <a href="{{route('admin')}}"class="btn btn-primary">Voltar</a>
+        <a href="{{route('admin')}}"class="btn-voltar">Voltar</a>
         <table class="table table-dark table-striped table-hover">
             <thead>
                 <tr>
