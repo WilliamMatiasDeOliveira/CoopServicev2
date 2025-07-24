@@ -67,14 +67,6 @@
             @endauth
         </div>
 
-        {{-- @guest
-            <a href="{{ route('login') }}"class="login">Entrar</a>
-        @endguest
-
-        @auth
-            <a href="{{ route('logout') }}"class="logout">Logout</a>
-        @endauth --}}
-
     </header>
 
     <div class="video">

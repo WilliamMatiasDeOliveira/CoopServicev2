@@ -57,6 +57,7 @@ body {
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.9)50%, rgba(10, 12, 16, 0.99)85%);
 }
 
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /*      HEADER                                                                                       */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -262,7 +263,6 @@ body {
 /* header main_layout CELULAR */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 @media (max-width: 767px) {
-
     .header {
         display: flex;
         flex-direction: column;
@@ -332,6 +332,17 @@ body {
 
     .video .mascara {
         background: linear-gradient(109deg, rgba(10, 12, 16, 0.95) 50%, rgba(10, 12, 16, 0.99) 85%);
+    }
+
+    #menu {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+    }
+
+    #menu.show {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
