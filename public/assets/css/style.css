@@ -1822,7 +1822,568 @@ body {
     }
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*      PAGINA PERFIL
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina perfil DESKTOP
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+.perfil-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.perfil-container .left-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 0 2rem 2rem 0;
+    background-color: rgba(86, 94, 100, 0.5);
+}
+
+.perfil-container .left-menu .image {
+    width: 40%;
+    height: 20%;
+}
+
+.perfil-container .left-menu .image img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.perfil-container .left-menu .dados {
+    color: white;
+    padding: 3rem;
+}
+
+.perfil-container .left-menu .dados h2 {
+    font-size: 1.5rem;
+}
+
+.perfil-container .left-menu .dados span {
+    font-size: 1.5rem;
+    color: #ff7300;
+}
+
+.perfil-container .left-menu .buttons a {
+    text-decoration: none;
+    background-color: #ff7300;
+    padding: 0.5rem 2rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.perfil-container .left-menu p {
+    color: #ff7300;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.form-update {
+    display: none;
+    margin: 0 auto;
+    background-color: rgba(86, 94, 100, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.form-update.visivel {
+    display: block;
+    background-color: rgba(86, 94, 100, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.form-update label {
+    color: #ff7300;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.form-update input {
+    font-size: 1.5rem;
+}
+
+.form-update .files {
+    margin-top: 2rem;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina perfil TABLET
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .perfil-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .perfil-container .left-menu {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: auto;
+        padding: 2rem;
+        border-radius: 2rem;
+        background-color: rgba(86, 94, 100, 0.5);
+    }
+
+    .perfil-container .left-menu .image {
+        width: 30%;
+        height: 50%;
+        border-radius: 2rem;
+        padding: 0;
+    }
+
+    .perfil-container .left-menu .image img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+    }
+
+    .perfil-container .left-menu .buttons {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        height: auto;
+    }
+
+    .perfil-container .left-menu .dados {
+        display: none;
+    }
+
+    .perfil-container .left-menu a {
+        text-decoration: none;
+        background-color: #ff7300;
+        padding: 0.5rem 3rem;
+        color: white;
+        font-weight: 700;
+        border-radius: 1rem;
+        margin-top: 6rem;
+        font-size: 2rem;
+    }
+
+    .perfil-container .left-menu p {
+        color: #ff7300;
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+
+    .perfil-container .form-update {
+        display: none;
+        width: 80%;
+        margin: 2rem auto;
+        background-color: rgba(86, 94, 100, 0.5);
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    .perfil-container .form-update.visivel {
+        display: block;
+        background-color: rgba(86, 94, 100, 0.5);
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    .perfil-container .form-update label {
+        color: #ff7300;
+        font-size: 2rem;
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+
+    .perfil-container .form-update input {
+        font-size: 2rem;
+    }
+
+    .perfil-container .form-update .files {
+        margin-top: 2rem;
+    }
+
+
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina perfil CELULAR
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 767px) {
+    .perfil-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .perfil-container .left-menu {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: auto;
+        padding: 2rem;
+        border-radius: 2rem;
+        background-color: rgba(86, 94, 100, 0.5);
+    }
+
+    .perfil-container .left-menu .image {
+        width: 30%;
+        height: 50%;
+        border-radius: 2rem;
+        padding: 0;
+    }
+
+    .perfil-container .left-menu .image img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+    }
+
+    .perfil-container .left-menu .buttons {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        height: auto;
+    }
+
+    .perfil-container .left-menu .dados {
+        display: none;
+    }
+
+    .perfil-container .left-menu .buttons a {
+        text-decoration: none;
+        background-color: #ff7300;
+        padding: 0.5rem 2rem;
+        color: white;
+        font-weight: 700;
+        border-radius: 1rem;
+        margin-top: 6rem;
+        font-size: 1rem;
+    }
+
+    .perfil-container .left-menu p {
+        color: #ff7300;
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+
+    .perfil-container .form-update {
+        display: none;
+        width: 80%;
+        margin: 2rem auto;
+        background-color: rgba(86, 94, 100, 0.5);
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    .perfil-container .form-update.visivel {
+        display: block;
+        background-color: rgba(86, 94, 100, 0.5);
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    .perfil-container .form-update label {
+        color: #ff7300;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+
+    .perfil-container .form-update input {
+        font-size: 1.5rem;
+    }
+
+    .perfil-container .form-update .files {
+        margin-top: 1.5rem;
+    }
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*      PAGINA ADMIN
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina admin DESKTOP
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+.perfil-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.perfil-container .left-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 0 2rem 2rem 0;
+
+    background-color: rgba(86, 94, 100, 0.5);
+}
+
+.perfil-container .left-menu .image {
+    width: 40%;
+    height: 20%;
+
+    /* background: green; */
+}
+
+.perfil-container .left-menu .image img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.perfil-container .left-menu .dados {
+    color: white;
+}
+
+.perfil-container .left-menu .dados h2 {
+    font-size: 1.5rem;
+}
+
+.perfil-container .left-menu .dados span {
+    font-size: 1.5rem;
+    color: #ff7300;
+}
+
+.perfil-container .left-menu a {
+    text-decoration: none;
+    background-color: #ff7300;
+    padding: 0.5rem 3rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.perfil-container .form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+
+}
+
+.perfil-container .form-container .tipo-profissao {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.perfil-container .form-container .tipo-profissao input {
+    padding: 0.3rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    margin: 0 1.5rem;
+    color: white;
+    background-color: #ff7300;
+    font-weight: bold;
+}
+
+.perfil-container .form-container .tipo-profissao input:hover {
+    color: black;
+}
+
+.form-container .form-update {
+    display: none;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    background-color: rgba(86, 94, 100, 0.5);
+}
+
+.form-container .form-update label {
+    color: #ff7300;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.form-container .form-update input {
+    font-size: 1.5rem;
+}
+
+.form-container .form-update.visivel {
+    display: block;
+    background-color: rgba(86, 94, 100, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina admin TABLET
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .perfil-container .left-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 40%;
+        border-radius: 2rem;
+        background-color: rgba(86, 94, 100, 0.5);
+    }
+
+    .perfil-container .form-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 2rem;
+
+    }
+
+    .perfil-container .form-container .tipo-profissao {
+        display: flex;
+        justify-content: center;
+    }
+
+    .perfil-container .form-container .tipo-profissao form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .perfil-container .form-container .tipo-profissao form input {
+        background-color: #ff7300;
+        width: 80%;
+        font-size: 2rem;
+        margin: 1rem;
+    }
+
+    .perfil-container .form-container .tipo-profissao input:hover {
+        color: black;
+    }
+
+    .form-container .form-update {
+        display: none;
+        margin: 3rem auto;
+        padding: 2rem;
+        border-radius: 1rem;
+
+        background-color: rgba(86, 94, 100, 0.5);
+    }
+
+    .form-container .form-update label {
+        color: #ff7300;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+
+    .form-container .form-update input {
+        font-size: 1.5rem;
+    }
+
+    .form-container .form-update.visivel {
+        display: block;
+        background-color: rgba(86, 94, 100, 0.5);
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pagina admin CELULAR
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 767px) {
+    .perfil-container .left-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 40%;
+        border-radius: 2rem;
+        background-color: rgba(86, 94, 100, 0.5);
+    }
+
+    .perfil-container .form-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 2rem;
+
+    }
+
+    .perfil-container .form-container .tipo-profissao {
+        display: flex;
+        justify-content: center;
+    }
+
+    .perfil-container .form-container .tipo-profissao form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .perfil-container .form-container .tipo-profissao form input {
+        background-color: #ff7300;
+        width: 80%;
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+
+    .perfil-container .form-container .tipo-profissao input:hover {
+        color: black;
+    }
+
+    .form-container .form-update {
+        display: none;
+        margin: 3rem auto;
+        padding: 2rem;
+        border-radius: 1rem;
+
+        background-color: rgba(86, 94, 100, 0.5);
+    }
+
+    .form-container .form-update label {
+        color: #ff7300;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+
+    .form-container .form-update input {
+        font-size: 1.5rem;
+    }
+
+    .form-container .form-update.visivel {
+        display: block;
+        background-color: rgba(86, 94, 100, 0.5);
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+}
 
 
 

@@ -38,13 +38,13 @@ class MainController extends Controller
 
             if ($user->tipo === 'visitante') {
                 return redirect()->route('home');
-            } else if($user->tipo === 'servico') {
-                if($user->cargo == null){
+            } else if ($user->tipo === 'servico') {
+                if ($user->cargo == null) {
                     return redirect()->route("cargo");
-                }else{
+                } else {
                     return redirect()->route('perfil');
                 }
-            }else if($user->tipo === 'admin'){
+            } else if ($user->tipo === 'admin') {
                 return redirect()->route('admin');
             }
         } else {
@@ -93,7 +93,7 @@ class MainController extends Controller
         User::create([
             "nome" => strtolower($request->input('nome')),
             "email" => strtolower($request->input('email')),
-            "phone"=>$request->input('phone'),
+            "phone" => $request->input('phone'),
             "cidade" => strtolower($request->input('cidade')),
             "password" => strtolower($request->input('password')),
             "tipo" => strtolower($request->input('tipo'))
@@ -112,7 +112,6 @@ class MainController extends Controller
         $user->save();
 
         return redirect()->route('perfil');
-
     }
 
     public function logout()
@@ -154,19 +153,19 @@ class MainController extends Controller
             $nomeImagem = time() . '.' . $request->foto->getClientOriginalExtension();
             $request->foto->move(public_path('assets/fotos'), $nomeImagem);
             $user->foto = $nomeImagem;
+        }
 
-            // se veio curriculo
-            if ($request->hasFile('curriculo')) {
-                // Exclui currículo antigo
-                if ($user->curriculo && file_exists(public_path('curriculos/' . $user->curriculo))) {
-                    unlink(public_path('curriculos/' . $user->curriculo));
-                }
-
-                // Salva novo currículo
-                $nomeCurriculo = time() . '.' . $request->curriculo->getClientOriginalExtension();
-                $request->curriculo->move(public_path('assets/curriculos'), $nomeCurriculo);
-                $user->curriculo = $nomeCurriculo;
+        // se veio curriculo
+        if ($request->hasFile('curriculo')) {
+            // Exclui currículo antigo
+            if ($user->curriculo && file_exists(public_path('curriculos/' . $user->curriculo))) {
+                unlink(public_path('curriculos/' . $user->curriculo));
             }
+
+            // Salva novo currículo
+            $nomeCurriculo = time() . '.' . $request->curriculo->getClientOriginalExtension();
+            $request->curriculo->move(public_path('assets/curriculos'), $nomeCurriculo);
+            $user->curriculo = $nomeCurriculo;
         }
 
         $user->save();
@@ -220,7 +219,7 @@ class MainController extends Controller
 
         $users = User::where('cargo', $tipo_profissao)->get();
 
-        if($users == null){
+        if ($users == null) {
             $users = [];
         }
 
@@ -229,21 +228,17 @@ class MainController extends Controller
 
     public function perfil()
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             $user = Auth::user();
 
-            if($user->tipo == 'servico' || $user->tipo == 'visitante'){
+            if ($user->tipo == 'servico' || $user->tipo == 'visitante') {
                 return view('Auth.perfil');
-            }else{
+            } else {
                 return view('Auth.admin');
             }
-        }else{
+        } else {
             $create_account = "Para acessar o perfil você precisa ter uma conta";
             return redirect()->route('create-account')->with(compact('create_account'));
         }
     }
-
-
-
-
 }

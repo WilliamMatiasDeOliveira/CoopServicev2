@@ -3,117 +3,6 @@
 
 @section('content')
 
-    <style>
-        .perfil-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-
-            /* background-color: yellow; */
-        }
-
-        .perfil-container .left-menu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 20%;
-            height: 100%;
-            padding: 2rem;
-            border-radius: 0 2rem 2rem 0;
-
-            background-color: rgba(86, 94, 100, 0.5);
-        }
-
-        .perfil-container .left-menu .image {
-            width: 40%;
-            height: 20%;
-
-            /* background: green; */
-        }
-
-        .perfil-container .left-menu .image img {
-            width: 100%;
-            border-radius: 1rem;
-        }
-
-        .perfil-container .left-menu .dados {
-            color: white;
-        }
-
-        .perfil-container .left-menu .dados h2 {
-            font-size: 1.5rem;
-        }
-
-        .perfil-container .left-menu .dados span {
-            font-size: 1.5rem;
-            color: #ff7300;
-        }
-
-        .perfil-container .left-menu a {
-            text-decoration: none;
-            background-color: #ff7300;
-            padding: 0.5rem 3rem;
-            color: white;
-            font-weight: 700;
-            border-radius: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .perfil-container .left-menu p {
-            color: #ff7300;
-            font-size: 1.5rem;
-        }
-
-        .form-container {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-            padding: 2rem;
-
-        }
-
-        .form-container .tipo-profissao {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-
-            /* background-color: yellow; */
-        }
-
-        .form-container .tipo-profissao input {
-            margin: 0 1.5rem;
-            padding: 0.5rem;
-        }
-
-        .form-container .form-update {
-            display: none;
-            margin: 3rem auto;
-            padding: 2rem;
-            border-radius: 1rem;
-
-            background-color: rgba(86, 94, 100, 0.5);
-        }
-
-        .form-container .form-update label {
-            color: #ff7300;
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-
-        .form-container .form-update input{
-            font-size: 1.5rem;
-        }
-
-        .form-container .form-update.visivel {
-                display: block;
-                background-color: rgba(86, 94, 100, 0.5);
-                padding: 2rem;
-                border-radius: 1rem;
-            }
-
-    </style>
 
     <div class="perfil-container">
         <div class="left-menu">
@@ -134,23 +23,21 @@
                 <span>Cidade</span>
                 <h2>{{ Auth::user()->cidade }}</h2>
             </div>
-
-            <a href="#" class="btn-atualizar">ATUALIZAR</a>
-
+            <div>
+                <a href="#" class="btn-atualizar">ATUALIZAR</a>
+            </div>
         </div>
 
         <div class="form-container">
             <div class="tipo-profissao">
-                <form action="{{route('tipo-profissao-submit')}}" method="post">
+                <form action="{{ route('tipo-profissao-submit') }}" method="post">
                     @csrf
-                    <input type="submit"name="tipo-profissao" value="LIMPEZA" class="btn btn-primary form-controll">
-                    <input type="submit"name="tipo-profissao" value="JARDINAGEM" class="btn btn-primary form-controll">
-                    <input type="submit"name="tipo-profissao" value="PISCINEIRO" class="btn btn-primary form-controll">
-                    <input type="submit"name="tipo-profissao" value="VIGILÂNCIA" class="btn btn-primary form-controll">
-                    <input type="submit"name="tipo-profissao" value="GESTÃO DE ESTOQUE"
-                        class="btn btn-primary form-controll">
-                    <input type="submit"name="tipo-profissao"
-                        value="OPERADOR DE EMPILHADEIRA"class="btn btn-primary form-controll">
+                    <input type="submit"name="tipo-profissao" value="LIMPEZA">
+                    <input type="submit"name="tipo-profissao" value="JARDINAGEM">
+                    <input type="submit"name="tipo-profissao" value="PISCINEIRO">
+                    <input type="submit"name="tipo-profissao" value="VIGILÂNCIA">
+                    <input type="submit"name="tipo-profissao" value="GESTÃO DE ESTOQUE">
+                    <input type="submit"name="tipo-profissao" value="OPERADOR DE EMPILHADEIRA">
                 </form>
             </div>
 
@@ -187,19 +74,19 @@
     </div>
 
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const btn = document.querySelector('.btn-atualizar');
-        const form = document.querySelector('.form-update');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.querySelector('.btn-atualizar');
+            const form = document.querySelector('.form-update');
 
-        if (btn && form) {
-            btn.addEventListener('click', function(event) {
-                event.preventDefault(); // evitar que o link pule para o topo
-                form.classList.toggle('visivel'); // alterna a visibilidade
-            });
-        }
-    });
-</script>
+            if (btn && form) {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault(); // evitar que o link pule para o topo
+                    form.classList.toggle('visivel'); // alterna a visibilidade
+                });
+            }
+        });
+    </script>
 
 
 

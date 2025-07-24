@@ -3,100 +3,6 @@
 
 @section('content')
 
-    <style>
-        .perfil-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-
-            /* background-color: yellow; */
-
-        }
-
-        .perfil-container .left-menu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 20%;
-            height: 100%;
-            padding: 2rem;
-            border-radius: 0 2rem 2rem 0;
-
-
-            background-color: rgba(86, 94, 100, 0.5);
-        }
-
-        .perfil-container .left-menu .image {
-            width: 40%;
-            height: 20%;
-
-            /* background: green; */
-        }
-
-        .perfil-container .left-menu .image img {
-            width: 100%;
-            border-radius: 1rem;
-        }
-
-        .perfil-container .left-menu .dados {
-            color: white;
-            padding: 3rem;
-        }
-
-        .perfil-container .left-menu .dados h2 {
-            font-size: 1.5rem;
-        }
-
-        .perfil-container .left-menu .dados span {
-            font-size: 1.5rem;
-            color: #ff7300;
-        }
-
-        .perfil-container .left-menu a {
-            text-decoration: none;
-            background-color: #ff7300;
-            padding: 0.5rem 3rem;
-            color: white;
-            font-weight: 700;
-            border-radius: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .perfil-container .left-menu p{
-            color: #ff7300;
-            font-size: 1.5rem;
-        }
-
-        .form-update {
-            display: none;
-            margin: 0 auto;
-            background-color: rgba(86, 94, 100, 0.5);
-            padding: 2rem;
-            border-radius: 1rem;
-        }
-
-        .form-update.visivel {
-            display: block;
-            background-color: rgba(86, 94, 100, 0.5);
-            padding: 2rem;
-            border-radius: 1rem;
-        }
-
-        .form-update label {
-            color: #ff7300;
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-
-        .form-update input {
-            font-size: 1.5rem;
-        }
-
-        .form-update .files {
-            margin-top: 2rem;
-        }
-    </style>
 
     <div class="perfil-container">
         <div class="left-menu">
@@ -118,13 +24,17 @@
                 <h2>{{ Auth::user()->cidade }}</h2>
             </div>
 
-            <a href="#" class="btn-atualizar">ATUALIZAR</a>
 
-            @if (Auth::user()->curriculo)
-                <a href="{{ asset('assets/curriculos/' . Auth::user()->curriculo) }}" target="_blank">Ver Currículo</a>
-            @else
-                <p>Nenhum currículo enviado</p>
-            @endif
+            <div class="buttons">
+                <a href="#" class="btn-atualizar">ATUALIZAR</a>
+
+
+                @if (Auth::user()->curriculo)
+                    <a href="{{ asset('assets/curriculos/' . Auth::user()->curriculo) }}" target="_blank"class="btn-atualizar">VER CURRÍCULO</a>
+                @else
+                    <p>Nenhum currículo enviado</p>
+                @endif
+            </div>
         </div>
 
         <div class="form-update">
@@ -155,27 +65,22 @@
             </form>
         </div>
 
-
-
-
-
     </div>
 
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const btn = document.querySelector('.btn-atualizar');
-        const form = document.querySelector('.form-update');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.querySelector('.btn-atualizar');
+            const form = document.querySelector('.form-update');
 
-        if (btn && form) {
-            btn.addEventListener('click', function(event) {
-                event.preventDefault(); // evitar que o link pule para o topo
-                form.classList.toggle('visivel'); // alterna a visibilidade
-            });
-        }
-    });
-
-</script>
+            if (btn && form) {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault(); // evitar que o link pule para o topo
+                    form.classList.toggle('visivel'); // alterna a visibilidade
+                });
+            }
+        });
+    </script>
 
 
 @endsection
