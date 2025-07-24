@@ -1701,6 +1701,13 @@ body {
     justify-content: space-between;
 }
 
+.create-account .links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* pagina create-account TABLET
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -1711,6 +1718,28 @@ body {
 
     .create-account form {
         width: 70%;
+    }
+
+    .create-account label {
+        color: #ff7300;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .create-account input {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .create-account input[type="password"] {
+        font-size: 2rem !important;
+    }
+
+    .create-account .links a {
+        text-decoration: none;
+        color: white;
+        font-size: 2rem;
+        margin-top: 2rem;
     }
 
 }

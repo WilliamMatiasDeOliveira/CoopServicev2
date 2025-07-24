@@ -62,6 +62,7 @@ class MainController extends Controller
                 "nome" => "required|string|min:3",
                 "email" => "required|email",
                 "cidade" => "required|string",
+                "phone" => "required",
                 "password" => "required|min:6|max:16|confirmed"
             ],
             // message
@@ -75,6 +76,8 @@ class MainController extends Controller
 
                 "cidade.required" => "Este campo é obrigatório",
                 "cidade.string" => "Apenas letras",
+
+                "phone.required" => "Este campo é obrigatório",
 
                 "password.required" => "Este campo é obrigatório",
                 "password.min" => "A senha deve ter no :min caracteres",

@@ -45,7 +45,7 @@
 
             <label for="phone" class="form-label">Telefone</label>
             <input type="phone"name="phone" class="form-control">
-            @error('email')
+            @error('phone')
                 <div class="text-warning"style="font-size: 1.2rem;">
                     {{ $message }}
                 </div>
