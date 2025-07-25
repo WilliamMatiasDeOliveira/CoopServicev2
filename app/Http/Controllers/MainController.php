@@ -53,7 +53,6 @@ class MainController extends Controller
         }
     }
 
-
     public function createAccountSubmit(Request $request)
     {
         $request->validate(

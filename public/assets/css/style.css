@@ -1964,6 +1964,13 @@ body {
     color: #ff7300;
 }
 
+.perfil-container .left-menu .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
 .perfil-container .left-menu .buttons a {
     text-decoration: none;
     background-color: #ff7300;
@@ -1972,6 +1979,7 @@ body {
     font-weight: 700;
     border-radius: 1rem;
     margin-bottom: 3rem;
+    font-size: 1rem;
 }
 
 .perfil-container .left-menu p {
@@ -2050,24 +2058,24 @@ body {
 
     .perfil-container .left-menu .buttons {
         display: flex;
-        align-items: center;
-        gap: 2rem;
-        height: auto;
+        height: 5rem;
+        width: 50%;
+    }
+
+    .perfil-container .left-menu .buttons a {
+        text-decoration: none;
+        background-color: #ff7300;
+        padding: 0.5rem 2rem;
+        color: white;
+        font-weight: 700;
+        border-radius: 1rem;
+        font-size: 1rem;
+        margin: 1rem 0;
+        font-size: 1.5rem;
     }
 
     .perfil-container .left-menu .dados {
         display: none;
-    }
-
-    .perfil-container .left-menu a {
-        text-decoration: none;
-        background-color: #ff7300;
-        padding: 0.5rem 3rem;
-        color: white;
-        font-weight: 700;
-        border-radius: 1rem;
-        margin-top: 6rem;
-        font-size: 2rem;
     }
 
     .perfil-container .left-menu p {
@@ -2152,12 +2160,9 @@ body {
     .perfil-container .left-menu .buttons {
         display: flex;
         align-items: center;
-        gap: 2rem;
-        height: auto;
-    }
-
-    .perfil-container .left-menu .dados {
-        display: none;
+        height: 5rem;
+        position: relative;
+        margin-top: 6rem;
     }
 
     .perfil-container .left-menu .buttons a {
@@ -2167,8 +2172,12 @@ body {
         color: white;
         font-weight: 700;
         border-radius: 1rem;
-        margin-top: 6rem;
         font-size: 1rem;
+        position: relative;
+    }
+
+    .perfil-container .left-menu .dados {
+        display: none;
     }
 
     .perfil-container .left-menu p {
@@ -2196,17 +2205,17 @@ body {
 
     .perfil-container .form-update label {
         color: #ff7300;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         margin-top: 1rem;
         font-weight: bold;
     }
 
     .perfil-container .form-update input {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .perfil-container .form-update .files {
-        margin-top: 1.5rem;
+        margin-top: 1.1rem;
     }
 }
 
