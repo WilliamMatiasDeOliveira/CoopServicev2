@@ -30,7 +30,7 @@ Route::post('/cargo-submit', [MainController::class, 'cargoSubmit'])->name('carg
 Route::post('/tipo-profissao-submit', [MainController::class, 'tipoProfissaoSubmit'])->name('tipo-profissao-submit');
 
 Route::view('/admin', 'Auth.admin')->name('admin');
-
+      
 
 
 
