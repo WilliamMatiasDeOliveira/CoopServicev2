@@ -27,10 +27,9 @@
 
             <div class="buttons">
                 <a href="#" class="btn-atualizar">ATUALIZAR</a>
-
-
                 @if (Auth::user()->curriculo)
-                    <a href="{{ asset('assets/curriculos/' . Auth::user()->curriculo) }}" target="_blank"class="btn-atualizar">VER CURRÍCULO</a>
+                    <a href="{{ asset('assets/curriculos/' . Auth::user()->curriculo) }}"
+                        target="_blank"class="btn-atualizar">VER CURRÍCULO</a>
                 @else
                     <p>Nenhum currículo enviado</p>
                 @endif
@@ -61,7 +60,7 @@
                     <input type="file" name="curriculo" class="form-control" accept=".pdf,.doc,.docx">
                 </div>
 
-                <input type="submit"class="form-control btn btn-primary" value="ATUALIZAR">
+                <input type="submit"class="btn-atualizar" value="ATUALIZAR">
             </form>
         </div>
 
