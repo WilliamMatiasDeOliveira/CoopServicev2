@@ -26,10 +26,11 @@
 
 
             <div class="buttons">
-                <a href="#" class="btn-atualizar">ATUALIZAR</a>
+                <a href="#"class="button">ATUALIZAR</a>
+
                 @if (Auth::user()->curriculo)
                     <a href="{{ asset('assets/curriculos/' . Auth::user()->curriculo) }}"
-                        target="_blank"class="btn-atualizar">VER CURRÍCULO</a>
+                        target="_blank"class="button">VER CURRÍCULO</a>
                 @else
                     <p>Nenhum currículo enviado</p>
                 @endif
@@ -40,27 +41,26 @@
             <form action="{{ route('atualizar') }}" method="post"enctype="multipart/form-data">
                 @csrf
 
-                <label for="nome"class="form-label">Nome</label>
+                <label for="nome"class="label">Nome</label>
                 <input type="text"name="nome" class="form-control" value="{{ Auth::user()->nome }}">
 
-                <label for="email"class="form-label">E-mail</label>
+                <label for="email"class="label">E-mail</label>
                 <input type="text"name="email" class="form-control" value="{{ Auth::user()->email }}">
 
-                <label for="cidade"class="form-label">Cidade</label>
+                <label for="cidade"class="label">Cidade</label>
                 <input type="text"name="cidade" class="form-control" value="{{ Auth::user()->cidade }}">
 
-                <label for="password"class="form-label">Senha</label>
+                <label for="password"class="label">Senha</label>
                 <input type="password"name="password" class="form-control">
 
                 <div class="files">
-                    <label for="foto">Foto</label>
+                    <label for="foto" class="label">Foto</label>
                     <input type="file"name="foto" class="form-control">
 
-                    <label for="curriculo" class="form-label">Currículo (PDF ou DOC)</label>
+                    <label for="curriculo" class="label">Currículo (PDF ou DOC)</label>
                     <input type="file" name="curriculo" class="form-control" accept=".pdf,.doc,.docx">
                 </div>
-
-                <input type="submit"class="btn-atualizar" value="ATUALIZAR">
+                <input type="submit"value="ATUALIZAR">
             </form>
         </div>
 
@@ -69,7 +69,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const btn = document.querySelector('.btn-atualizar');
+            const btn = document.querySelector('.button');
             const form = document.querySelector('.form-update');
 
             if (btn && form) {

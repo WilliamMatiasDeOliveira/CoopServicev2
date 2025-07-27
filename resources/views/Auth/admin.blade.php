@@ -78,10 +78,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             const btn = document.querySelector('.btn-atualizar');
             const form = document.querySelector('.form-update');
+            const tipo = document.querySelector('.tipo-profissao')
 
             if (btn && form) {
                 btn.addEventListener('click', function(event) {
                     event.preventDefault(); // evitar que o link pule para o topo
+                    tipo.classList.toggle('invisivel')
                     form.classList.toggle('visivel'); // alterna a visibilidade
                 });
             }

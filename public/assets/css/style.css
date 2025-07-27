@@ -2298,6 +2298,7 @@ body {
     background-color: rgba(86, 94, 100, 0.5);
     padding: 2rem;
     border-radius: 1rem;
+    width: 30%;
 }
 
 .form-update.visivel {
@@ -2314,12 +2315,25 @@ body {
     font-weight: bold;
 }
 
-.form-update input {
-    font-size: 1.5rem;
+.perfil-container .form-update input[type='submit'] {
+    background-color: #ff7300;
+    border: none;
+    color: white;
+    font-family: orbitron, sans-serif;
+    font-weight: bold;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    letter-spacing: 0.2rem;
 }
 
 .form-update .files {
     margin-top: 2rem;
+}
+
+.perfil-container .form-update .botao-atualizar {
+    background-color: #ff7300;
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -2336,7 +2350,7 @@ body {
 
     .perfil-container .left-menu {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-direction: column;
         align-items: center;
         width: 80%;
@@ -2347,20 +2361,23 @@ body {
     }
 
     .perfil-container .left-menu .image {
-        width: 30%;
-        height: 50%;
         border-radius: 2rem;
         padding: 0;
+        margin-top: 0;
+        object-fit: cover;
     }
 
     .perfil-container .left-menu .image img {
-        width: 100%;
-        height: auto;
+        width: 200px;
+        min-height: 180px;
         border-radius: 1rem;
+        object-fit: cover;
     }
 
     .perfil-container .left-menu .buttons {
         display: flex;
+        flex-direction: row;
+        gap: 3rem;
         height: 5rem;
         width: 50%;
     }
@@ -2368,13 +2385,12 @@ body {
     .perfil-container .left-menu .buttons a {
         text-decoration: none;
         background-color: #ff7300;
-        padding: 0.5rem 2rem;
+        padding: 0.5rem 1rem;
         color: white;
         font-weight: 700;
         border-radius: 1rem;
-        font-size: 1rem;
+        font-size: 2rem;
         margin: 1rem 0;
-        font-size: 1.5rem;
     }
 
     .perfil-container .left-menu .dados {
@@ -2395,6 +2411,7 @@ body {
         background-color: rgba(86, 94, 100, 0.5);
         padding: 2rem;
         border-radius: 1rem;
+        font-size: 5rem;
     }
 
     .perfil-container .form-update.visivel {
@@ -2402,21 +2419,33 @@ body {
         background-color: rgba(86, 94, 100, 0.5);
         padding: 2rem;
         border-radius: 1rem;
+        min-height: 60%;
     }
 
-    .perfil-container .form-update label {
+    .perfil-container .form-update .label {
         color: #ff7300;
-        font-size: 2rem;
+        font-size: 2.3rem;
         margin-top: 1rem;
         font-weight: bold;
     }
 
-    .perfil-container .form-update input {
-        font-size: 2rem;
+    .perfil-container .form-update .form-control {
+        font-size: 2.3rem;
+    }
+
+    .perfil-container .form-update input[type='submit'] {
+        background-color: #ff7300;
+        border: none;
+        color: white;
+        font-family: orbitron, sans-serif;
+        font-weight: bold;
+        margin-top: 2rem;
+        letter-spacing: 0.2rem;
+        font-size: 2.3rem;
     }
 
     .perfil-container .form-update .files {
-        margin-top: 2rem;
+        margin-top: 2.3rem;
     }
 
 
@@ -2467,7 +2496,7 @@ body {
     .perfil-container .left-menu .buttons {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         text-align: center;
         margin-top: 0.5rem;
@@ -2497,6 +2526,7 @@ body {
     }
 
     .perfil-container .form-update {
+        min-width: 80%;
         display: none;
         margin: 1rem;
         background-color: rgba(86, 94, 100, 0.5);
@@ -2513,41 +2543,29 @@ body {
         margin: 1rem;
     }
 
-    .perfil-container .form-update label {
+    .perfil-container .form-update .form-label {
         color: #ff7300;
         font-size: 1.3rem;
         margin-top: 1rem;
         font-weight: bold;
-        display: block;
     }
 
-    .perfil-container .form-update input {
-        font-size: 1.3rem;
-        width: 100%;
-        padding: 0.5rem;
-        margin-top: 0.5rem;
-        border-radius: 0.5rem;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
-
-    .perfil-container .form-update .btn-atualizar {
-        text-decoration: none;
+    .perfil-container .form-update input[type='submit'] {
         background-color: #ff7300;
-        padding: 0.7rem 1.5rem;
-        color: white;
-        font-weight: 700;
-        border-radius: 1rem;
         border: none;
-        margin-top: 1rem;
-        font-size: 1.2rem;
-        flex: 1;
-        min-width: 80%;
-        /* max-width: 150px; */
+        color: white;
+        font-family: orbitron, sans-serif;
+        font-weight: bold;
+        margin-top: 1.5rem;
+        letter-spacing: 0.2rem;
     }
 
-    .form-update .files {
-        margin-top: 1.5rem;
+    .perfil-container .form-update .form-control {
+        font-size: 1.3rem;
+    }
+
+    .perfil-container .form-update .files {
+        margin-top: 1.3rem;
     }
 }
 
@@ -2634,6 +2652,10 @@ body {
     font-weight: bold;
 }
 
+.perfil-container .form-container .tipo-profissao.invisivel {
+    display: none;
+}
+
 .perfil-container .form-container .tipo-profissao input:hover {
     color: black;
 }
@@ -2679,6 +2701,10 @@ body {
         background-color: rgba(86, 94, 100, 0.5);
     }
 
+    .perfil-container .left-menu a {
+        font-size: 2rem;
+    }
+
     .perfil-container .form-container {
         display: flex;
         justify-content: center;
@@ -2704,6 +2730,10 @@ body {
         width: 80%;
         font-size: 2rem;
         margin: 1rem;
+    }
+
+    .perfil-container .form-container .tipo-profissao.invisivel {
+        display: none;
     }
 
     .perfil-container .form-container .tipo-profissao input:hover {
@@ -2764,6 +2794,10 @@ body {
     .perfil-container .form-container .tipo-profissao {
         display: flex;
         justify-content: center;
+    }
+
+    .perfil-container .form-container .tipo-profissao.invisivel {
+        display: none;
     }
 
     .perfil-container .form-container .tipo-profissao form {
