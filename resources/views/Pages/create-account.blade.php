@@ -88,7 +88,7 @@
             </div>
 
 
-            <input type="submit"value="CADASTRAR" class="btn btn-primary form-control">
+            <input type="submit"value="CADASTRAR">
 
         </form>
     </div>

@@ -40,7 +40,7 @@
                 <a href="{{ route('create-account') }}">Ainda Não Tem Conta ?</a>
             </div>
 
-            <input type="submit"value="LOGIN" class="btn btn-primary form-control">
+            <input type="submit"value="LOGIN">
 
         </form>
     </div>
