@@ -122,7 +122,7 @@ class MainController extends Controller
         return redirect()->route('home');
     }
 
-    public function atualizar(Request $request)
+     public function atualizar(Request $request)
     {
         $user = Auth::user();
 
@@ -131,8 +131,8 @@ class MainController extends Controller
             'email' => 'required|email',
             'cidade' => 'required|string',
             'password' => 'nullable|min:6',
-            'foto' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'curriculo' => 'nullable|mimes:pdf,doc,docx|max:2048',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+            'curriculo' => 'nullable|mimes:pdf,doc,docx',
         ]);
 
         $user->nome = $request->nome;
@@ -147,33 +147,39 @@ class MainController extends Controller
         // Se veio nova foto
         if ($request->hasFile('foto')) {
             // Deleta foto antiga, se existir
-            if ($user->foto && file_exists(public_path('assets/fotos/' . $user->foto))) {
-                unlink(public_path('assets/fotos/' . $user->foto));
+            if ($user->foto && file_exists(base_path('../public_html/assets/fotos/' . $user->foto))) {
+                unlink(base_path('../public_html/assets/fotos/' . $user->foto));
             }
 
             // Salva nova imagem
             $nomeImagem = time() . '.' . $request->foto->getClientOriginalExtension();
-            $request->foto->move(public_path('assets/fotos'), $nomeImagem);
+            $request->foto->move(base_path('../public_html/assets/fotos'), $nomeImagem);
+
             $user->foto = $nomeImagem;
         }
 
         // se veio curriculo
         if ($request->hasFile('curriculo')) {
             // Exclui currículo antigo
-            if ($user->curriculo && file_exists(public_path('curriculos/' . $user->curriculo))) {
-                unlink(public_path('curriculos/' . $user->curriculo));
+            if ($user->curriculo && file_exists(base_path('../public_html/assets/curriculos/' . $user->curriculo))) {
+                unlink(base_path('../public_html/assets/curriculos/' . $user->curriculo));
             }
 
             // Salva novo currículo
             $nomeCurriculo = time() . '.' . $request->curriculo->getClientOriginalExtension();
-            $request->curriculo->move(public_path('assets/curriculos'), $nomeCurriculo);
+            $request->curriculo->move(base_path('../public_html/assets/curriculos/') , $nomeCurriculo);
             $user->curriculo = $nomeCurriculo;
         }
 
         $user->save();
 
-
-        return back()->with('success', 'Perfil atualizado com sucesso!');
+        if($user->tipo == "admin"){
+            return redirect()->route('admin')->with('success', 'Perfil atualizado com sucesso!');
+        }else{
+            return redirect()->route('perfil')->with('success', 'Perfil atualizado com sucesso!');
+        }
+    
+        // return back()->with('success', 'Perfil atualizado com sucesso!');
     }
 
     public function comentario(Request $request)
